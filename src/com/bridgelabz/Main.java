@@ -1,9 +1,16 @@
 package com.bridgelabz;
+import java.util. *;
 
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println("Welcome to the LinkedList");
+
+        MyLinkedLink addLinkList = new MyLinkedLink();
+        addLinkList.add(56);
+        addLinkList.add(30);
+        addLinkList.add(70);
+        addLinkList.display(addLinkList.head);
 
     }
 }
+
