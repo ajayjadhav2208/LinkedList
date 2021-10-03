@@ -35,13 +35,6 @@ public class MyLinkedLink {
         newNode.next = head;
         head = newNode;
     }
-    public boolean emptyCheck () {
-        if (head == null) {
-            return true;
-
-        }
-        return false;
-    }
 
     //*********************************UC3 Insert at the tail************************************
     public void insertAtTail(int data) {
@@ -89,6 +82,27 @@ public class MyLinkedLink {
         Node newHead = head.next;
         return newHead;
     }
+    //******************************UC6 Delete at lhe last element**************************
+    public void popLastMethod() {
+        if (emptyCheck()) {
+            System.out.println("Empty LinkedList");
+            return;
+        }
+
+        Node temp = head;
+        while (temp.next.next != null) {
+            temp = temp.next;
+        }
+        temp.next = null;
+    }
+    public boolean emptyCheck () {
+        if (head == null) {
+            return true;
+
+        }
+        return false;
+    }
+
     public void display (Node head){
         if (emptyCheck()) {
             System.out.println("Empty LinkedList");
@@ -102,5 +116,4 @@ public class MyLinkedLink {
         }
     }
 }
-
 
