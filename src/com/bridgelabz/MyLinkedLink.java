@@ -1,5 +1,4 @@
 package com.bridgelabz;
-import java.util.*;
 
 class Node {
     int data;
@@ -14,7 +13,7 @@ class Node {
 public class MyLinkedLink {
     Node head = null;
     Node tail;
-    //****************UC1 Create a simple LinkedList*****************************************
+    //****************UC1 Create a simple LinkList*****************************************
     public void add(int data) {
         Node newNode = new Node(data);
         if (head == null) {
@@ -42,18 +41,7 @@ public class MyLinkedLink {
         }
         return false;
     }
-    public void display (Node head){
-        if (emptyCheck()) {
-            System.out.println("Empty LinkedList");
-            return;
-        }
 
-        Node temp = head;
-        while (temp != null) {
-            System.out.print(temp.data + "->");
-            temp = temp.next;
-        }
-    }
     //*********************************UC3 Insert at the tail************************************
     public void insertAtTail(int data) {
         Node newNode = new Node(data);
@@ -69,12 +57,39 @@ public class MyLinkedLink {
         temp.next = newNode;
         tail = newNode;
     }
+//************************************UC4 Insert 30 between 56 and 70********************************
 
+    public void insertAtMidPosition(int position, int data) {
+        Node newNode = new Node(data);
+        if (emptyCheck()) {
+            System.out.println("Empty LinkedList");
+            return;
+        }
+
+        Node temp = head;
+        int idx = 1;
+        while (temp.next != null) {
+            if (idx == position - 1) {
+                break;
+            }
+            idx++;
+            temp = temp.next;
+        }
+        Node nxt = temp.next;
+        temp.next = newNode;
+        newNode.next = nxt;
+    }
+    public void display (Node head){
+        if (emptyCheck()) {
+            System.out.println("Empty LinkedList");
+            return;
+        }
+
+        Node temp = head;
+        while (temp != null) {
+            System.out.print(temp.data + "->");
+            temp = temp.next;
+        }
+    }
 
 }
-
-
-
-
-
-
