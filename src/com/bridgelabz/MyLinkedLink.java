@@ -14,7 +14,7 @@ class Node {
 public class MyLinkedLink {
     Node head = null;
     Node tail;
-    //****************UC1 Creat a simple Linklist*****************************************
+    //****************UC1 Create a simple LinkList*****************************************
     public void add(int data) {
         Node newNode = new Node(data);
         if (head == null) {
@@ -63,7 +63,7 @@ public class MyLinkedLink {
     public void insertAtMidPosition(int position, int data) {
         Node newNode = new Node(data);
         if (emptyCheck()) {
-            System.out.println("Empty Linkedlist");
+            System.out.println("Empty LinkedList");
             return;
         }
 
@@ -80,9 +80,18 @@ public class MyLinkedLink {
         temp.next = newNode;
         newNode.next = nxt;
     }
+    //*****************************UC5 Delete the  first element**********************
+    public Node popMethod() {
+        if (emptyCheck()) {
+            System.out.println("Empty LinkedList");
+            return head;
+        }
+        Node newHead = head.next;
+        return newHead;
+    }
     public void display (Node head){
         if (emptyCheck()) {
-            System.out.println("Empty Linkedlist");
+            System.out.println("Empty LinkedList");
             return;
         }
 
@@ -92,12 +101,6 @@ public class MyLinkedLink {
             temp = temp.next;
         }
     }
-
 }
-
-
-
-
-
 
 
