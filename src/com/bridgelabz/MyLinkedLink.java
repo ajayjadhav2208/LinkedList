@@ -14,7 +14,7 @@ class Node {
 public class MyLinkedLink {
     Node head = null;
     Node tail;
-    //****************UC1 Create a simple LinkList*****************************************
+    //****************UC1 Creat a simple Linklist*****************************************
     public void add(int data) {
         Node newNode = new Node(data);
         if (head == null) {
@@ -56,7 +56,7 @@ public class MyLinkedLink {
     public void insertAtMidPosition(int position, int data) {
         Node newNode = new Node(data);
         if (emptyCheck()) {
-            System.out.println("Empty LinkedList");
+            System.out.println("Empty Linkedlist");
             return;
         }
 
@@ -76,7 +76,7 @@ public class MyLinkedLink {
     //*****************************UC5 Delete the  first element**********************
     public Node popMethod() {
         if (emptyCheck()) {
-            System.out.println("Empty LinkedList");
+            System.out.println("Empty Linkedlist");
             return head;
         }
         Node newHead = head.next;
@@ -85,7 +85,7 @@ public class MyLinkedLink {
     //******************************UC6 Delete at lhe last element**************************
     public void popLastMethod() {
         if (emptyCheck()) {
-            System.out.println("Empty LinkedList");
+            System.out.println("Empty Linkedlist");
             return;
         }
 
@@ -94,6 +94,18 @@ public class MyLinkedLink {
             temp = temp.next;
         }
         temp.next = null;
+    }
+
+    //**************************UC7 Searching method to find node with value 30****************************
+    public boolean searchingMethod(int key) {
+        Node temp = head;
+        while (temp != null) {
+            if (temp.data == key) {
+                return true;
+            }
+            temp = temp.next;
+        }
+        return false;
     }
     public boolean emptyCheck () {
         if (head == null) {
@@ -105,7 +117,7 @@ public class MyLinkedLink {
 
     public void display (Node head){
         if (emptyCheck()) {
-            System.out.println("Empty LinkedList");
+            System.out.println("Empty Linkedlist");
             return;
         }
 
