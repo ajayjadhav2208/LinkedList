@@ -118,6 +118,20 @@ public class MyLinkedLink {
         }
         return false;
     }
+    //***********************UC9 show size of the linklist******************************
+    public void showSize() {
+        if (emptyCheck()) {
+            System.out.println("Empty Linkedlist");
+            return;
+        }
+        int count = 0;
+        Node temp = head;
+        while (temp != null) {
+            count++;
+            temp = temp.next;
+        }
+        System.out.println("Length Of Linkedlist: " + count);
+    }
 
     public void display(Node head) {
         if (emptyCheck()) {
@@ -132,6 +146,3 @@ public class MyLinkedLink {
         }
     }
 }
-
-
-
