@@ -1,54 +1,59 @@
 package com.bridgelabz;
+import java.util.*;
 
+class Node {
+    int data;
+    Node next;
 
-//public class MyLinkedLink {
-    class Node {
-        int data;
-        Node next;
+    public Node(int data) {
+        this.data = data;
+        this.next = null;
+    }
+}
 
-        public Node(int data) {
-            this.data = data;
-            this.next = null;
+public class MyLinkedLink {
+    Node head = null;
+    Node tail;
+    //****************UC1 Create a simple LinkedList*****************************************
+    public void add(int data) {
+        Node newNode = new Node(data);
+        if (head == null) {
+            head = newNode;
+            return;
         }
+        Node temp = head;
+        while (temp.next != null) {
+            temp = temp.next;
+        }
+        temp.next = newNode;
+        tail = newNode;
     }
 
-    public class MyLinkedLink {
-        Node head = null;
-        Node tail;
-
-        public void add(int data) {
-            Node newNode = new Node(data);
-            if (head == null) {
-                head = newNode;
-                return;
-            }
-            Node temp = head;
-            while (temp.next != null) {
-                temp = temp.next;
-            }
-            temp.next = newNode;
-            tail = newNode;
-        }
-        public boolean emptyCheck() {
-            if(head == null) {
-                return true;
-
-            }
-            return false;
-        }
-        public void display(Node head) {
-            if (emptyCheck()) {
-                System.out.println("Empty LinkedList");
-                return;
-            }
-
-            Node temp = head;
-            while (temp != null) {
-                System.out.print(temp.data + "->");
-                temp = temp.next;
-            }
-
-        }
-
-
+    //******************UC2 Insert at the head*****************************************
+    public void insertAtHead(int data) {
+        Node newNode = new Node(data);
+        newNode.next = head;
+        head = newNode;
     }
+    public boolean emptyCheck () {
+        if (head == null) {
+            return true;
+
+        }
+        return false;
+    }
+    public void display (Node head){
+        if (emptyCheck()) {
+            System.out.println("Empty LinkedList");
+            return;
+        }
+
+        Node temp = head;
+        while (temp != null) {
+            System.out.print(temp.data + "->");
+            temp = temp.next;
+        }
+    }
+}
+
+
