@@ -14,6 +14,7 @@ class Node {
 public class MyLinkedLink {
     Node head = null;
     Node tail;
+
     //****************UC1 Creat a simple Linklist*****************************************
     public void add(int data) {
         Node newNode = new Node(data);
@@ -73,6 +74,7 @@ public class MyLinkedLink {
         temp.next = newNode;
         newNode.next = nxt;
     }
+
     //*****************************UC5 Delete the  first element**********************
     public Node popMethod() {
         if (emptyCheck()) {
@@ -82,6 +84,7 @@ public class MyLinkedLink {
         Node newHead = head.next;
         return newHead;
     }
+
     //******************************UC6 Delete at lhe last element**************************
     public void popLastMethod() {
         if (emptyCheck()) {
@@ -107,7 +110,8 @@ public class MyLinkedLink {
         }
         return false;
     }
-    public boolean emptyCheck () {
+
+    public boolean emptyCheck() {
         if (head == null) {
             return true;
 
@@ -115,7 +119,7 @@ public class MyLinkedLink {
         return false;
     }
 
-    public void display (Node head){
+    public void display(Node head) {
         if (emptyCheck()) {
             System.out.println("Empty Linkedlist");
             return;
@@ -128,4 +132,6 @@ public class MyLinkedLink {
         }
     }
 }
+
+
 
